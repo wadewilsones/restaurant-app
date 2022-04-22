@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style-mobile.css" rel="stylesheet" type="text/css">
+    <link href="./style-desktop.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <title>Contacts</title>
+</head>
+<body>
+    <header>
+        <section id="logo">
+            <h4>The Restaurant</h4>
+        </section>
+
+        <section id="main-navigation">
+            <input type="checkbox" id="checkbox_id">
+            <nav>
+                <label for ="checkbox_id"><img src="./media/burger.svg"></label>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+            <p>Contacts</p>
+            <div class="cart-items">
+                <span class="cartItem"></span>
+                <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
+            </div>
+        </section>
+    </header>
+    <main id="contacts">
+        <section id="operation-hours">
+            <h2>Hours of operations:</h2>
+            <table>
+                <tr>
+                    <td>Monday</td>
+                    <td>7am - 8pm</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>7am - 8pm</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>7am - 8pm</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>7am - 8pm</td>
+                    
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>7am - 10pm</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>7am - 10pm</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>7am - 8pm</td>
+            </table>
+        </section>
+        <section id="formSection">
+            <h4>Get in Touch</h4>
+            <h6>Feel free to drop us a line below</h6>
+            <form>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="Your email.." /><br>
+                <label for="message">Message</label><br>
+                <textarea id="message" placeholder="Your message.."></textarea><br>
+                <input type="submit" id="submitForm" value="Send" />
+            </form>
+        </section>
+        <section id="data">
+            <h6>To place an order via phone: </h6>
+            <p><a href="tel:+12345678910">+ 1 (234) 567-8910</a></p>
+            <h6>Our address for pick up: </h6>
+            <p>12 Food Srteet, NY, 12345</p>
+        </section>
+        <section id="concerns">
+            <h6>For any concerns, please email us at:</h6>
+            <a href="mailto: therestaurant@restuarant.com">therestaurant@restuarant.com</a>
+        </section>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>

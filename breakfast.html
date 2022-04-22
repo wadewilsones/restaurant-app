@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style-mobile.css" rel="stylesheet" type="text/css">
+    <link href="./style-desktop.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <title>Breakfast</title>
+</head>
+<body>
+    <header>
+        <section id="logo">
+            <h4>The Restaurant</h4>
+        </section>
+
+        <section id="main-navigation">
+            <input type="checkbox" id="checkbox_id">
+            <nav>
+                <label for ="checkbox_id"><img src="./media/burger.svg"></label>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+            <p>Breakfast</p>
+            <div class="cart-items">
+                <span class="cartItem"></span>
+                <a href="../cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
+            </div>
+
+        </section>
+    </header>
+    <main class="meals">
+        <h2>Just simply select a category
+            <br>to see all our breakfast menu items</h2>
+
+            <section class="time-meals">
+                <div class="wrapper">
+                    <a href="./breakfast/omelet.html">
+                        <div class="meal-container-inside">
+                            <img src="./media/omlette.jpg" alt="Omelette">
+                            <h3>Omelette</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <a href="./breakfast/waffles.html">
+                        <div class="meal-container-inside">
+                            <img src="./media/waffles.jpg" alt="waffles">
+                            <h3>Waffles</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <a href="./breakfast/Sandwiches.html">
+                        <div class="meal-container-inside">
+                            <img src="./media/breakfast-sandw.jpg" alt="Sandwiches">
+                            <h3>Sandwiches</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <a href="./breakfast/pancakes.html">
+                        <div class="meal-container-inside">
+                            <img src="./media/pancakes.jpg" alt="Pancakes">
+                            <h3>Pancakes</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>

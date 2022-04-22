@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style-mobile.css" rel="stylesheet" type="text/css">
+    <link href="./style-desktop.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <title>the Restuarant - Home</title>
+    <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
+></script>
+</head>
+<body>
+    <header>
+        <section id="logo">
+            <h4>The Restaurant</h4>
+        </section>
+
+        <section id="main-navigation">
+            <input type="checkbox" id="checkbox_id">
+            <nav>
+                <label for ="checkbox_id"><img src="./media/burger.svg"></label>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+            <p>Home</p>
+            <div class="cart-items">
+                <span class="cartItem"></span>
+                <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
+            </div>
+
+        </section>
+    </header>
+    <main id="home-main">
+        <h2>Where would you like<br> to start today?</h2>
+        <section id="home-meal-container">
+            <div class="wrapper">
+                <a href="./breakfast.html">
+                    <div class="meal-container-inside">
+                        <img src="./media/breakfast.jpg" alt="breakfast">
+                        <h3>Breakfast</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper">
+                <a href="./lunch.html">
+                    <div class="meal-container-inside">
+                        <img src="./media/lunch.jpg" alt="lunch">
+                        <h3>Lunch</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="wrapper">
+                <a href="./dinner.html">
+                    <div class="meal-container-inside">
+                        <img src="./media/dinner.jpg" alt="Drinks">
+                        <h3>Dinner</h3>
+                    </div>
+                </a>
+            </div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
