@@ -1,80 +1,254 @@
 /* Set up cart*/
-
 let addItemBtns = document.querySelectorAll(".addItem");
-let cartItem = document.querySelector(".cartItem");
-let count = 0;
 let emptyCart = document.querySelector("#empty-cart");
 let removeItemBtns = document.querySelectorAll(".removeItem");
-let cartFullContainer =  document.querySelector("#full-cart-container");
+let cartFullContainer = document.querySelector("#full-cart-container");
 
-addItemBtns.forEach(addItemBtn => {
-    addItemBtn.addEventListener('click', addItem)
-})
 
-removeItemBtns.forEach(removeItemBtn => {
-    removeItemBtn.addEventListener('click', removeItem)
-})
-
+for (let i = 0; i < addItemBtns.length; i++) {
+    addItemBtns[i].addEventListener('click', () => {
+        calculateItemsAmount(dishes[i]); // passing dishes with index to function 
+        totalCost(dishes[i].price);
+    })
+}
 
 window.onload = () => {
-    count = localStorage.getItem("foodItems") ? +localStorage.getItem("foodItems") : 0;
-    displayItemAmount(count);
-    displayCart(count);
-
+    displayItemAmount();
 }
 
-function addItem(e){
-    e.preventDefault();
-    count += 1;
-    localStorage.setItem("foodItems", JSON.stringify(count));
-    displayItemAmount(count);
-    displayCart(count);
+//how many items in the cart
 
-}
-
-function removeItem(e){
-    e.preventDefault();
-    count -= 1;
-    if(count < 0){
-        count = 0;
-        displayItemAmount(count);
-        displayCart(count);
-    }
-    localStorage.setItem("foodItems", JSON.stringify(count));
-    displayItemAmount(count);
-    displayCart(count);
-
-}
-
-
-function displayItemAmount(data){
-
-    if(data > 0){
-        cartItem.innerHTML = data;
+function calculateItemsAmount(dish) {
+    let itemNumber = localStorage.getItem('dishNumber');
+    itemNumber = parseInt(itemNumber); // converts string data from local storage to number
+    if (itemNumber) {
+        localStorage.setItem('dishNumber', itemNumber + 1);
+        document.querySelector(".cartItem").textContent = localStorage.getItem('dishNumber');
+    } else {
+        localStorage.setItem('dishNumber', 1);
+        document.querySelector(".cartItem").textContent = null;
     }
 
-    else {
-        cartItem.innerHTML = null;
-    }
+    setDishes(dish);
+
 }
 
+function setDishes(dish) {
 
-function displayCart(count){
-    if(window.location.href == "file:///D:/Wake%20Tech/s2022/WEB125/finalProject/cart.html"){ // change it after post
+    let cartItems = localStorage.getItem('dishInCart');
+    cartItems = JSON.parse(cartItems); // JSON string to Object
+    if (cartItems != null) {
 
-        if(count > 0){
-            emptyCart.style.display = "none";
-            cartFullContainer.style.display ="block";
-            document.querySelector("#full-cart").innerHTML = "<h1>You have " + count + " dishes in your cart!</h1>"
+        if (cartItems[dish.name] === undefined) {
+            cartItems = {
+                ...cartItems,
+                [dish.name]: dish
+            }
         }
-
-        if(count <= 0){
-            emptyCart.style.display = "block";
-            cartFullContainer.style.display ="none";
-            document.querySelector("#full-cart").innerHTML = null;
+        cartItems[dish.name].inCart += 1;
+    } else {
+        dish.inCart = 1;
+        cartItems = {
+            [dish.name]: dish
         }
-
     }
-    
+
+    localStorage.setItem("dishInCart", JSON.stringify(cartItems));
 
 }
+
+function displayItemAmount() {
+
+    let itemNumber = localStorage.getItem('dishNumber');
+    if (itemNumber) {
+        document.querySelector(".cartItem").innerHTML = itemNumber;
+    } else {
+        document.querySelector(".cartItem").innerHTML = null;
+    }
+}
+
+function totalCost(price){
+    let cartCost = localStorage.getItem("totalCost");
+    localStorage.setItem("totalCost", price);
+    if(cartCost != null){
+        cartCost = parseInt(cartCost);
+        localStorage.setItem("totalCost", cartCost + price);
+    }
+
+}
+
+function displayCart(){
+    let food = localStorage.getItem("dishInCart");
+    let total = localStorage.getItem("totalCost");
+    food = JSON.parse(food);
+    let dishContainer = document.querySelector('.dish-holder');
+    let totalData = document.querySelector('.Cost-data');
+    if(food && dishContainer ){
+        document.querySelector('#empty-cart').style.display = 'none';
+        dishContainer.innerHTML = '';
+        document.querySelector('#titleCart').innerHTML = "Your cart";
+        Object.values(food).map(item => {
+            dishContainer.innerHTML += `
+            <div class="type-meal-container-inside">
+                <img src="${item.img}" alt="Salmon Rolls">
+                <h3>${item.name}<span>${item.price}</span></h3>
+                <p>Ingredients: ${item.Ingredients}</p>
+                <p>Quantity: ${item.inCart}</p>
+                <button class="removeBtn">Remove from the cart</button>
+             </div>
+            `;
+        })
+        totalData.innerHTML += `
+        <h3 id="total-data">Your total: $${total}</h3>
+        <button id="pay">Pay</button>
+    `;
+    }
+
+
+}
+
+displayCart();
+let dishes = [{
+        name: 'Salmon Rolls',
+        price: 27,
+        inCart: 0,
+        img: "./media/salmon-rolls.jpg",
+        Ingredients: 'salmon, avocado',
+    },
+
+    {
+        name: 'Seafood Plate',
+        price: 35,
+        inCart: 0,
+        img: "./media/seafood-2.jpg",
+        Ingredients: 'Octopus, shrimps, lemon'
+    },
+
+    {
+        name: 'Greek Salad',
+        price: 13,
+        inCart: 0,
+        img: "./media/salads.jpg",
+        Ingredients: 'Feta cheese, tomatoes'
+    },
+
+    {
+        name: 'Omelet',
+        price: 13,
+        inCart: 0,
+        img: "./media/omelet-4.jpg",
+        Ingredients: 'Eggs, milk'
+    },
+
+    {
+        name: 'Pork Chops',
+        price: 27,
+        inCart: 0,
+        img: "./media/meat-1.jpg",
+        Ingredients: 'pork, tomatoes'
+    },
+
+    {
+        name: 'Roastbeef',
+        price: 35,
+        inCart: 0,
+        img: "./media/meat.jpg",
+        Ingredients: 'Beef, tomatoes, lettuce'
+    },
+
+    {
+        name: 'Ham omelet',
+        price: 12,
+        inCart: 0,
+        img: "./media/omlette.jpg",
+        Ingredients: 'Eggs, milk, ham'
+    },
+
+    {
+        name: 'Caesar salad',
+        price: 12,
+        inCart: 0,
+        img: "./media/salad-2.jpg",
+        Ingredients: 'Chicken, tomatoes, lettuce'
+    },
+
+
+    {
+        name: 'Mushroom omelet',
+        price: 15,
+        inCart: 0,
+        img: "./media/omelette-2.jpg",
+        Ingredients: 'Eggs, milk, mushrooms'
+    },
+
+    {
+        name: 'Raspberry Waffles',
+        price: 12,
+        inCart: 0,
+        img: "./media/waffle-1.jpg",
+        Ingredients: 'Eggs, milk, raspberry'
+    },
+
+    {
+        name: 'Chocolate Waffles',
+        price: 12,
+        inCart: 0,
+        img: "./media/waffles.jpg",
+        Ingredients: 'Eggs, milk, chocolate'
+    },
+
+    {
+        name: 'Chocolate pancakes',
+        price: 12,
+        inCart: 0,
+        img: "./media/pancakes-3.jpg",
+        Ingredients: 'Eggs, milk, chocolate'
+    },
+
+
+    {
+        name: 'Strawberry omelet',
+        price: 15,
+        inCart: 0,
+        img: "./media/omelet-3.jpg",
+        Ingredients: 'Eggs, milk, strawberry'
+    },
+
+
+    {
+        name: 'Raspberry Pancakes',
+        price: 12,
+        inCart: 0,
+        img: "./media/pancakes.jpg.jpg",
+        Ingredients: 'Eggs, milk, raspberry'
+    },
+
+    {
+        name: 'Caramel pancakes',
+        price: 12,
+        inCart: 0,
+        img: "./media/pancakes-2.jpg",
+        Ingredients: 'Eggs, milk, caramel'
+    },
+
+    {
+        name: 'Lavander Latte',
+        price: 5,
+        inCart: 0,
+        img: "./media/latte.jpg",
+        Ingredients: 'lavender syrup, coffee'
+    },
+
+
+    {
+        name: 'Orange Juice',
+        price: 15,
+        inCart: 0,
+        img: "./media/juice.jpg",
+        Ingredients: 'Oranges'
+    },
+
+
+
+
+]

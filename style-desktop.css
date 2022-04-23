@@ -1,33 +1,33 @@
-*{
-    margin:0;
-    padding:0;
-    border:0;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
 
 }
 
-body{
+body {
     font-family: Quicksand, Helvetica, sans-serif;
 }
 
-#logo{
+#logo {
     background-color: #DE3C3C;
-    color:white;
+    color: white;
     padding: 2em 0;
 }
 
-#logo h4{
+#logo h4 {
     text-align: center;
     font-weight: 300;
 }
 
-#cart-container a{
+#cart-container a {
     display: block;
     text-align: center;
     margin-bottom: 0.2em;
 }
 
 
-#cart{
+#cart {
     color: #DE3C3C;
     cursor: pointer;
     display: block;
@@ -39,12 +39,13 @@ body{
 
 
 
-@media screen and (min-width:1100px){
-    #logo{
+@media screen and (min-width:1100px) {
+    #logo {
         font-size: 1.2em;
     }
-    #main-navigation{
-        width:1100px;
+
+    #main-navigation {
+        width: 1100px;
         margin: auto;
         padding: 1em 0;
         box-shadow: rgba(59, 56, 56, 0.365) 1px 1px 10px;
@@ -57,114 +58,117 @@ body{
 
     }
 
-    .cart-items{
+    .cart-items {
         grid-column-start: 2;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .cart-items span{
-        font-size:1em;
+    .cart-items span {
+        font-size: 1em;
         font-weight: 500;
     }
 
-    i{
-        font-size:1.6em;
+    i {
+        font-size: 1.6em;
     }
 
-    .cart-items a{
+    .cart-items a {
         text-decoration: none;
     }
 
-    .cart-items a:hover{
+    .cart-items a:hover {
         text-decoration: none;
     }
 
-    #main-navigation p{
+    #main-navigation p {
         display: none;
     }
 
-    #checkbox_id{
+    #checkbox_id {
         display: none;
     }
 
-    #main-navigation label{
+    #main-navigation label {
         display: none;
     }
 
-    #main-navigation nav{
+    #main-navigation nav {
 
- 
+
         margin: auto;
-        width:500px;
+        width: 500px;
         grid-column-start: 1;
     }
-    #main-navigation nav ul{
+
+    #main-navigation nav ul {
         display: flex;
         align-items: center;
         justify-content: end;
 
     }
 
-    #main-navigation nav ul li{
+    #main-navigation nav ul li {
         list-style-type: none;
         font-size: 1.4em;
         padding: 0 1em 0 1em;
-    
+
     }
 
-    #main-navigation nav ul li a{
+    #main-navigation nav ul li a {
         text-decoration: none;
-        color:black;
-    
+        color: black;
+
     }
 
-    #main-navigation a:hover{
+    #main-navigation a:hover {
         text-decoration: underline;
-        color:black;
-    
+        color: black;
+
     }
+
     /*Cart*/
-    #cart-body{
-        width:1100px;
+    #cart-body {
+        width: 1100px;
         margin: auto;
     }
 
-    #cart-check-menu{
+    #cart-check-menu {
         display: block;
-        width:300px;
+        width: 300px;
         margin: 2em auto;
         padding: 10px;
         background-color: #DE3C3C;
-        color:white;
+        color: white;
         text-align: center;
-        font-size:1.3em;
+        font-size: 1.3em;
         text-decoration: none;
         border-radius: 10px;
     }
 
-    #cart-body h1{
+    #cart-body h1 {
         text-align: center;
         font-size: 2em;
         margin: 2em 0;
     }
 
 
-    .cart-meals{
-        width:1100px;
+    .cart-meals {
+        width: 1100px;
     }
+
     /*Home*/
 
-    #home-main h2{
+    #home-main h2 {
         text-align: center;
         font-weight: 500;
         font-size: 2.6em;
         margin: 2em 0 2em;
     }
 
-    #home-meal-container{
-        width:1100px;
+    #home-meal-container {
+        width: 1100px;
         margin: auto;
         display: flex;
         justify-content: space-around;
@@ -172,9 +176,9 @@ body{
 
     }
 
-    
+
     .meal-container-inside {
-        width:90%;
+        width: 90%;
         margin: auto;
         height: 30vh;
         box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
@@ -184,58 +188,59 @@ body{
 
     }
 
-    .meal-container-inside h3{
+    .meal-container-inside h3 {
         text-align: center;
         font-weight: 500;
         margin-top: 2em;
         font-size: 1.5em;
     }
 
-    .meal-container-inside img{
-        width:100%;
+    .meal-container-inside img {
+        width: 100%;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
 
-    
-    .wrapper a{
+
+    .wrapper a {
         text-decoration: none;
-        color:black;
+        color: black;
     }
 
-    /*Menu*/ 
-    #menu{
-        width:1100px;
+    /*Menu*/
+    #menu {
+        width: 1100px;
         margin: auto;
     }
 
-    #menu h2{
-        
+    #menu h2 {
+
         text-align: center;
         font-weight: 500;
         font-size: 2.6em;
         margin: 2em 0 2em;
     }
 
-    #menu h4{
-        
+    #menu h4 {
+
         text-align: left;
         font-weight: 500;
         font-size: 2em;
         margin: 2em 0 2em;
     }
 
-    #menu h5{
+    #menu h5 {
         display: none;
     }
-    .menu-cards{
+
+    .menu-cards {
 
         display: grid;
         grid-template-columns: 33% 33% 33%;
     }
 
-    .menu-cards div{
-        width:90%;
+    .menu-cards div {
+        width: 90%;
         margin: 1em auto;
         min-height: 30vh;
         box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
@@ -244,7 +249,7 @@ body{
         cursor: pointer;
     }
 
-    .menu-cards div h3{
+    .menu-cards div h3 {
         text-align: center;
         font-weight: 500;
         margin-top: 2em;
@@ -252,118 +257,159 @@ body{
     }
 
 
-   .menu-cards div p{
-    text-align: center;
-    font-weight: 300;
-    margin: 2em 0 0;
-    font-size: 0.9em;
-   }
+    .menu-cards div p {
+        text-align: center;
+        font-weight: 300;
+        margin: 2em 0 0;
+        font-size: 0.9em;
+    }
 
-   .menu-cards div span{
-       margin-left: 20px;
-   }
-    
-    .menu-cards div img{
-        width:100%;
+    .menu-cards div span {
+        margin-left: 20px;
+    }
+
+    .menu-cards div img {
+        width: 100%;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
 
 
-    .menu-cards div button{
+    .menu-cards div button {
 
         padding: 10px 40px;
         border-radius: 10px;
         background-color: #DE3C3C;
         display: block;
         margin: 1em auto 1em;
-        font-size:1.2em;
-        color:white;;
+        font-size: 1.2em;
+        color: white;
         cursor: pointer;
     }
 
-    .addItem{
+    .addItem {
         cursor: pointer;
     }
+
+
+    /*meals*/
+    .meals {
+        width: 1100px;
+        margin: auto;
+
+    }
+
+    .meals h2 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.2em;
+        margin: 2em 0 2em;
+    }
+
+    .time-meals {
+        display: grid;
+        width: 1100px;
+        margin: auto;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    /*Type meals*/
+    .type-meals {
+
+        display: grid;
+        grid-template-columns: 50% 50%
+    }
+
+    .type-meal-container-inside {
+        width: 90%;
+        margin: 1em auto;
+        min-height: 30vh;
+        box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
+        padding-bottom: 3em;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .type-meal-container-inside img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+
+    .type-meal-container-inside h3 {
+        text-align: center;
+        font-weight: 500;
+        margin-top: 2em;
+        margin-left: 2.5em;
+        font-size: 1.5em;
+    }
+
+    .type-meal-container-inside p {
+        text-align: center;
+    }
+
+    .type-meal-container-inside span {
+        margin-left: 3em;
+    }
+
+    .addItem {
+
+        padding: 20px 3em;
+        border-radius: 10px;
+        background-color: #DE3C3C;
+        display: block;
+        margin: 1em auto;
+        font-size: 1.5em;
+        color: white;
+    }
+
     
+    .dish-holder{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
 
-/*meals*/
-.meals{
-    width:1100px;
-    margin: auto;
+    }
+    #titleCart{
+        text-align: center;
+        margin: 1em 0;
+        font-size: 3em;
+    }
 
-}
-.meals h2{
-    text-align: center;
-    font-weight: 500;
-    font-size: 2.2em;
-    margin: 2em 0 2em;
-}
+    #total-data{
+        text-align: left;
+        margin-top: 2em;
+        font-size: 2.5em;
+    }
 
-.time-meals{
-    display: grid;
-    width:1100px;
-    margin:auto;
-    grid-template-columns: 25% 25% 25% 25%;
-}
+    #pay{
+        padding: 20px 3em;
+        border-radius: 10px;
+        background-color: #DE3C3C;
+        display: block;
+        margin: 1em 0;
+        font-size: 1.5em;
+        color: white;
+        cursor: pointer;
+    }
 
-/*Type meals*/
-.type-meals{
+    .removeBtn{
 
-    display: grid;
-    grid-template-columns: 50% 50%
-
-}
-
-.type-meal-container-inside {
-    width:90%;
-    margin: 1em auto;
-    min-height: 30vh;
-    box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
-    padding-bottom: 3em;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.type-meal-container-inside img{
-    width:100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-
-.type-meal-container-inside h3{
-    text-align: center;
-    font-weight: 500;
-    margin-top: 2em;
-    margin-left: 2.5em;
-    font-size: 1.5em;
-}
-
-.type-meal-container-inside p{
-    text-align: center;
-}
-
-.type-meal-container-inside span{
-    margin-left: 3em;
-}
-
-.type-meal-container-inside button{
-
-    padding:20px 3em;
-    border-radius: 10px;
-    background-color: #DE3C3C;
-    display: block;
-    margin: 1em auto;
-    font-size:1.5em;
-    color:white;
-}
+        padding: 20px 40px;
+        border-radius: 10px;
+        background-color: #DE3C3C;
+        display: block;
+        margin: 1em auto;
+        font-size: 1.2em;
+        color: white;
+        cursor: pointer;
+    }
 
 
     /*Contacts*/
 
-    #contacts{
-        width:1100px;
+    #contacts {
+        width: 1100px;
         margin: 3em auto 0;
         min-height: 65vh;
         display: grid;
@@ -372,7 +418,7 @@ body{
 
     }
 
-    #operation-hours{
+    #operation-hours {
 
         text-align: center;
         grid-column-start: 1;
@@ -381,42 +427,46 @@ body{
         align-self: flex-start;
 
     }
-    #operation-hours table{
 
-        width:50%;
+    #operation-hours table {
+
+        width: 50%;
         margin: 2em auto 0;
         line-height: 1.8;
     }
-    #operation-hours table td{
-        font-size:1.2em;
+
+    #operation-hours table td {
+        font-size: 1.2em;
         font-weight: 500;
     }
 
-    #formSection{
+    #formSection {
         grid-column-start: 2;
         grid-row-start: 1;
         grid-row-end: 4;
         align-self: flex-start;
 
     }
-    #formSection h4{
+
+    #formSection h4 {
         font-size: 1.6em;
         font-weight: 600;
         text-align: left;
-        margin: 0  0 0 4em;
+        margin: 0 0 0 4em;
 
     }
-    #formSection h6{
+
+    #formSection h6 {
         font-size: 1.3em;
         font-weight: 400;
         text-align: left;
-        margin:0 0 0 5em;
+        margin: 0 0 0 5em;
     }
 
-    form{
+    form {
 
         border-radius: 10px;
-        width:360px;
+        width: 360px;
         padding: 1em 0;
         margin: 2em auto 0;
         background-color: rgb(255, 255, 255);
@@ -424,10 +474,10 @@ body{
 
     }
 
-    form label{
+    form label {
         font-size: 1.4em;
-       line-height: 2;
-       margin-left: 1.4em;
+        line-height: 2;
+        margin-left: 1.4em;
     }
 
     form input[type=email] {
@@ -456,13 +506,13 @@ body{
     }
 
     form input[type=submit] {
-        width:80%;
+        width: 80%;
         height: 40px;
         font-size: 1.3em;
         border-radius: 10px;
         padding: 10px;
         box-shadow: rgba(122, 114, 114, 0.357) 1px 1px 10px;
-        margin:1em auto 0;
+        margin: 1em auto 0;
         display: block;
         background-color: #DE3C3C;
         color: white;
@@ -470,38 +520,41 @@ body{
     }
 
 
-    #data{
+    #data {
 
         margin: 5em 0 0;
         grid-row-start: 3;
         grid-row-end: 4;
         align-self: flex-end;
-        font-size:1.3em;
+        font-size: 1.3em;
         line-height: 1.5;
-        
+
     }
 
-    #data a, p, h6{
+    #data a,
+    p,
+    h6 {
         text-decoration: none;
-        color:black;
+        color: black;
         text-align: center;
     }
 
-    #data h6{
-        font-size:1em;
+    #data h6 {
+        font-size: 1em;
     }
 
-    #concerns{
-        grid-column-start:1;
-        grid-column-end:3;
+    #concerns {
+        grid-column-start: 1;
+        grid-column-end: 3;
         text-align: center;
-        font-size:1.6em;
+        font-size: 1.6em;
         grid-row-start: 4;
         grid-row-end: 5;
         align-self: flex-end;
     }
-    #concerns a{
+
+    #concerns a {
         text-decoration: none;
-        color:black;
+        color: black;
     }
 }
