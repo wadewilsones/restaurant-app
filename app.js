@@ -9,6 +9,7 @@ for (let i = 0; i < addItemBtns.length; i++) {
     addItemBtns[i].addEventListener('click', () => {
         calculateItemsAmount(dishes[i]); // passing dishes with index to function 
         totalCost(dishes[i].price);
+        displayItemAmount();
     })
 }
 
@@ -60,7 +61,7 @@ function setDishes(dish) {
 function displayItemAmount() {
 
     let itemNumber = localStorage.getItem('dishNumber');
-    if (itemNumber) {
+    if (itemNumber > 0) {
         document.querySelector(".cartItem").innerHTML = itemNumber;
     } else {
         document.querySelector(".cartItem").innerHTML = null;
@@ -109,6 +110,13 @@ function displayCart(){
 
 function sendtoPay(){
     window.location = "./pay.html"
+}
+
+function confirmation(){
+    localStorage.setItem('dishNumber', 0);
+    localStorage.setItem('dishInCart', null);
+    localStorage.setItem('totalCost', 0);
+    
 }
 
 displayCart();
