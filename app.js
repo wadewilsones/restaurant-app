@@ -99,12 +99,16 @@ function displayCart(){
             `;
         })
         totalData.innerHTML += `
-        <h3 id="total-data">Your total: $${total}</h3>
-        <button id="pay">Pay</button>
+        <h3 id="total-data">Your total is: $${total}</h3>
+        <button id="pay" onClick = 'sendtoPay()'>Pay</button>
     `;
     }
 
 
+}
+
+function sendtoPay(){
+    window.location = "./pay.html"
 }
 
 displayCart();

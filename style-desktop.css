@@ -5,6 +5,7 @@
 
 }
 
+
 body {
     font-family: Quicksand, Helvetica, sans-serif;
 }
@@ -557,4 +558,84 @@ body {
         text-decoration: none;
         color: black;
     }
+
+    /*Payments*/
+
+    #payment h2{
+        text-align: center;
+        margin: 2em 0;
+        font-size: 1.9em;
+    }
+    #payment-form{
+        width: 600px;
+        display: block;
+        padding: 0 0 10px 0;
+
+    }
+    
+    #addressGroup{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #expDate {
+        border: 2px solid rgb(237, 232, 232);
+        width:70px;
+        margin: 1em 0 0 2.6em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #cvv{
+        border: 2px solid rgb(237, 232, 232);
+        width:70px;
+        margin: 1em 0;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #address, #zip{
+        border: 2px solid rgb(237, 232, 232);
+        width:200px;
+        margin: 1em auto;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #apt{
+        border: 2px solid rgb(237, 232, 232);
+        width:50px;
+        margin: 1em auto;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #payment-form input[type=tel], #ccHolder{
+        border: 2px solid rgb(237, 232, 232);
+        width:400px;
+        margin: 1em 2.2em;
+        font-size:1em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+
+
+    #zip{
+        width: 90px !important;
+    }
+
+    #payBtn{
+        width:180px;
+        cursor: pointer;
+        display: block;
+        margin: 1em auto;
+    }
+
+
+
+
+
 }

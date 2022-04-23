@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="./style-mobile.css" rel="stylesheet" type="text/css">
+    <link href="./style-desktop.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>the Restuarant - Home</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
+</head>
+<body>
+    <header>
+        <section id="logo">
+            <h4>The Restaurant</h4>
+        </section>
+
+        <section id="main-navigation">
+            <input type="checkbox" id="checkbox_id">
+            <nav>
+                <label for ="checkbox_id"><img src="./media/burger.svg"></label>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+            <p>Payment</p>
+            <div class="cart-items">
+                <span class="cartItem"></span>
+                <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
+            </div>
+        </section>
+    </header>
+    <main id="payment">
+        <h2>Enter your payment details</h2>
+        <form id="payment-form" onSubmit="confirmPayment()" action="./confirmation.html">
+                <fieldset id="ccGroup">
+                    <label for="ccHolder"></label><br>
+                    <input type="text" id="ccHolder" placeholder="Credit card holder name">
+                    <label for="cc"></label><br>
+                    <input type="tel" inputmode="numeric" id="cc" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" >
+                    <label for = "expDate"></label>
+                    <input type="text" id="expDate" placeholder="mm/yy" maxlength="4">
+                    <label for = "cvv"></label>
+                    <input type="text" id="cvv" placeholder="CVV" maxlength="4">
+
+                </fieldset id="addressGroup">        
+                    <fieldset>
+                        <label for="address"></label>
+                        <input type="text" id="address" placeholder="Street address..." >
+                        <label for="apt"></label>
+                        <input type="text" id="apt" placeholder="Apt, unit.." >
+                        <label for="zip"></label>
+                        <input type="text" id="zip" placeholder="Zip-code.." >        
+                    </fieldset>
+                
+                <input type="submit" value="Pay" id="payBtn">
+
+        </form>
+
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
