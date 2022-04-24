@@ -335,16 +335,16 @@
     }
 
     form input[type=submit] {
-        width: 80%;
-        height: 40px;
-        font-size: 1.3em;
+       
+        padding: 20px 3em;
         border-radius: 10px;
-        padding: 10px;
-        box-shadow: rgba(122, 114, 114, 0.357) 1px 1px 10px;
-        margin: 1em auto 0;
+        background-color: transparent;
+        color: #202020;
+        border: 2px solid #202020;
         display: block;
-        background-color: #DE3C3C;
-        color: white;
+        margin: 1em auto;
+        font-size: 1.5em;
+        cursor: pointer;
 
     }
 
@@ -495,6 +495,109 @@
     .cartQ span{
         margin: 0 10px;
         font-size: 2em;
+    }
+
+
+    /*Payments*/
+
+    #payment h2{
+        text-align: center;
+        margin: 2em 0;
+        font-size: 1.6em;
+        font-weight: 300;
+    }
+
+    #payment-form{
+        width: 90%;
+        margin: auto;
+        display: block;
+
+    }
+    
+    #payment-form label{
+        font-size: 1.2em;
+
+    }
+
+    #expDate {
+        border: 2px solid rgb(237, 232, 232);
+        width:70px;
+        margin: 1em 0 0 2.6em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #cvv{
+        border: 2px solid rgb(237, 232, 232);
+        width:70px;
+        margin: 1em 0;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #address{
+        border: 2px solid rgb(237, 232, 232);
+        width:300px;
+        margin-left: 2.4em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #zip{
+        border: 2px solid rgb(237, 232, 232);
+        width: 80px;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #apt{
+        border: 2px solid rgb(237, 232, 232);
+        width:50px;
+        margin: 1em;
+        margin-left: 2.5em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #payment-form input[type=tel], #ccHolder{
+        border: 2px solid rgb(237, 232, 232);
+        width:300px;
+        margin: 1em 2em;
+        font-size:1em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+
+    #payBtn{
+        width:180px;
+        padding: 10px;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        margin: 1em auto;
+    }
+
+#payment h4{
+    text-align: center;
+    margin-top: 2em;
+    font-size:1.5em;
+    font-weight: 300;
+
+}
+    #editOrder{
+        border-radius: 10px;
+        display: block;
+        margin: 1em auto;
+        text-align: center;
+        width:300px;
+        padding: 10px 0;
+        text-decoration: none;
+        font-size: 1.5em;
+        background-color: transparent;
+        border:2px solid #404040;
+        color:#202020;
+        cursor: pointer;
     }
 
 
@@ -810,9 +913,10 @@
     form {
 
         border-radius: 10px;
-        width: 360px;
+        width: 340px;
         padding: 1em 0;
         margin: 2em auto 0;
+        margin-right: 1em;
         background-color: rgb(255, 255, 255);
         border: 1px solid rgb(214, 214, 214);
 
@@ -851,16 +955,16 @@
     }
 
     form input[type=submit] {
-        width: 80%;
+        width: 150px;
         height: 40px;
         font-size: 1.3em;
         border-radius: 10px;
         padding: 10px;
-        box-shadow: rgba(122, 114, 114, 0.357) 1px 1px 10px;
         margin: 1em auto 0;
         display: block;
-        background-color: #DE3C3C;
-        color: white;
+        border:#202020 2px solid;
+        background-color: transparent;
+        color:#202020;
 
     }
 
@@ -1021,4 +1125,113 @@
         font-size: 1.5em;
     }
 
+    
+
+    /*Payments*/
+
+    #payment h2{
+        text-align: center;
+        margin: 2em 0;
+        font-size: 1.6em;
+        font-weight: 300;
+    }
+
+    #payment-form{
+        width: 400px;
+        margin: auto;
+        display: block;
+
+    }
+    
+    #payment-form label{
+        font-size: 1.2em;
+
+    }
+
+    #addressGroup{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #expDate {
+        border: 2px solid rgb(237, 232, 232);
+        width:50px;
+        margin: 1em 0 0 2.6em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #cvv{
+        border: 2px solid rgb(237, 232, 232);
+        width:70px;
+        margin: 1em 0;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #address{
+        border: 2px solid rgb(237, 232, 232);
+        width:300px;
+        margin-left: 2.4em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #zip{
+        border: 2px solid rgb(237, 232, 232);;
+        padding: 1em 20px;
+        border-radius: 5px;
+        width:80px;
+    }
+
+    #apt{
+        border: 2px solid rgb(237, 232, 232);
+        width:50px;
+        margin: 1em 0 1em 2.5em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #payment-form input[type=tel], #ccHolder{
+        border: 2px solid rgb(237, 232, 232);
+        width:300px;
+        margin: 1em 2em;
+        font-size:1em;
+        padding: 1em 20px;
+        border-radius: 5px;
+    }
+
+    #payBtn{
+        width:180px;
+        cursor: pointer;
+        display: block;
+        margin: 1em auto;
+    }
+
+#payment h4{
+    text-align: center;
+    margin-top: 2em;
+    font-size:1.5em;
+    font-weight: 300;
+
 }
+    #editOrder{
+        border-radius: 10px;
+        display: block;
+        margin: 1em auto;
+        text-align: center;
+        width:300px;
+        padding: 10px 0;
+        text-decoration: none;
+        font-size: 1.5em;
+        background-color: transparent;
+        border:2px solid #404040;
+        color:#202020;
+        cursor: pointer;
+    }
+
+
+}
+
