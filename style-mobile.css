@@ -603,6 +603,55 @@
         cursor: pointer;
     }
 
+   /*Confirmation*/
+   #confirmation{
+    width:100%;
+}
+
+#confirmation h1{
+    text-align: center;
+    margin-top: 2em;
+}
+
+#confirmation h2{
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+#confirmation h3{
+    text-align: center;
+    font-size:1.2em;
+    margin: 1em 0 1em;
+}
+
+.order-details{
+    margin: auto;
+
+}
+
+
+#confirmation table th{
+
+   font-size: 0,5em;
+   padding: 10px 15px;
+   text-align: center;
+}
+
+#confirmation table td{
+   text-align: left;
+   padding: 10px 15px;
+   font-size:0.9em;
+   text-align: center;
+
+}
+
+#totalOrder{
+font-weight: 300;
+text-align: center;
+font-size:1.6em!important;
+
+}
+
 
 }
 
@@ -1234,6 +1283,55 @@
         color:#202020;
         cursor: pointer;
     }
+
+       /*Confirmation*/
+    #confirmation{
+        width:700px;
+        margin: auto;
+    }
+
+    #confirmation h1{
+        text-align: center;
+        margin-top: 2em;
+    }
+
+    #confirmation h2{
+        text-align: center;
+        margin-top: 0.5em;
+    }
+
+    #confirmation h3{
+        text-align: center;
+        font-size:1.6em;
+        margin: 3em 0 1em;
+    }
+
+    .order-details{
+        margin: auto;
+
+    }
+
+
+   #confirmation table th{
+    
+       font-size: 1em;
+       padding: 10px 15px;
+       text-align: left;
+   }
+
+   #confirmation table td{
+       text-align: left;
+       padding: 10px 15px;
+       font-size:0.9em;
+       text-align: center;
+
+   }
+
+   #totalOrder{
+   font-weight: 300;
+   font-size:1.6em!important;
+   }
+
 
 
 }

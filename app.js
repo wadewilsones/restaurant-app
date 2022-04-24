@@ -15,6 +15,9 @@ for (let i = 0; i < addItemBtns.length; i++) {
 
 window.onload = () => {
     displayItemAmount();
+    displayConfirmation();
+    displayCart();
+
 }
 
 //how many items in the cart
@@ -91,7 +94,7 @@ function displayCart(){
         Object.values(food).map(item => {
             dishContainer.innerHTML += `
             <div class="type-meal-container-inside">
-                <img src="${item.img}" alt="Salmon Rolls">
+                <img src="${item.img}" alt="${item.name}">
                 <h3>${item.name}<span>${item.price}</span></h3>
                 <p style ="margin-top:1em">Ingredients: ${item.Ingredients}</p>
                 <div class="cartQ">
@@ -105,48 +108,46 @@ function displayCart(){
         })
         totalData.innerHTML += `
         <h3 id="total-data">Your total is: $${total}</h3>
-        <button id="pay" onClick = 'sendtoPay() id="payBtn"'>Pay</button>
+        <button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>
     `;
     }
 
 }
 
 function sendtoPay(){
-    window.location = "./pay.html";
-  
+ 
+   window.location = './pay.html';
 }
 
-function confirmation(){
-    window.location = "./confirmation.html";
-    if(window.location = "./confirmation.html"){
-        let orderDetails = document.querySelector("#confirmation");
-        orderDetails.innerHTML = "<h1>Hello</h1>";
-    }
-
-    
 
 
-}
-
-    /*
-    let orderDetails = document.querySelector(".order-details");
-    let orderedFood = localStorage.getItem("dishInCart");
-    let orderTotal = localStorage.getItem("totalCost");
-    Object.values(orderedFood).map(item => {
-        orderDetails.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.price}</td>
-        <td>${item.inCart}</td>
-        
-    `
+function displayConfirmation(){
+   if(document.querySelector(".order-details")){
+        let orderDetails = document.querySelector(".order-details");
+        let orderedFood = localStorage.getItem("dishInCart");
+        orderedFood =  JSON.parse(orderedFood);
+        let orderTotal = localStorage.getItem("totalCost");
+        orderDetails.innerHTML = `<tr>
+            <th>Dishes</th>
+            <th>Quantity</th>
+            <th>Price Paid</th>
+        </tr>`
+        Object.values(orderedFood).map(item => {
+        orderDetails.innerHTML += `<tr>
+            <td>${item.name}</td>
+            <td>${item.inCart}</td>
+            <td>${item.price*item.inCart}</td>
+        </tr>
+        `;
     })
-    localStorage.setItem('dishNumber', 0),
-    localStorage.setItem('dishInCart', null),
-    localStorage.setItem('totalCost', 0)*/
+    orderDetails.innerHTML += `
+    <td colspan=3 id='totalOrder'>Total: $${orderTotal} </td>`
+}
+   
+}
 
 
 
-displayCart();
 let dishes = [{
         name: 'Salmon Rolls',
         price: 27,

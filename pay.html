@@ -35,7 +35,7 @@
     </header>
     <main id="payment">
         <h2>Please, enter your payment details</h2>
-        <form id="payment-form" action = './pay.html' onsubmit="confirmation()">
+        <form id="payment-form" action="./confirmation.html" method="POST">
                 <fieldset id="ccGroup">
                     <label for="ccHolder">Full name of credit card holder</label><br>
                     <input type="text" id="ccHolder" placeholder="Credit card holder name"><br>
@@ -56,7 +56,7 @@
                         <input type="text" id="zip" placeholder="Zip-code.." >        
                     </fieldset>
                 
-                <input type="submit" value="Pay" id="payBtn" >
+                <input type="submit" value="Pay" id="payBtn">
 
         </form>
         <h4>If you want to change your order press the button below:</h4>
