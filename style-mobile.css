@@ -394,6 +394,7 @@
         display: block;
     }
 
+
     #cart-check-menu {
         display: block;
         width: 300px;
@@ -440,6 +441,9 @@
 
     }
 
+    .dish-holder div{
+        margin: 1em auto;
+    }
     #titleCart{
         text-align: center;
         margin: 1em 0;
@@ -479,7 +483,7 @@
         height: 40px;
         padding: 0!important;
         font-size: 1.5em;
-        border-radius: 160px;
+        border-radius: 160px!important;
         cursor: pointer;
         display: inline;
         background-color: transparent;
@@ -497,7 +501,7 @@
 }
 
 
-@media screen and (min-width:700px) and (max-width:1399px) {
+@media screen and (min-width:700px) and (max-width:1100px) {
 
   
     header{
@@ -686,14 +690,14 @@
     .type-meals {
 
         display: grid;
-        grid-template-columns: 3;
+        grid-template-columns: 33% 33% 33% ;
 
     }
 
     .type-meal-container-inside {
-        width: 80%;
+        width: 95%;
         margin: 1em auto;
-        min-height: 30vh;
+        min-height: 25vh;
         box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
         padding-bottom: 3em;
         border-radius: 10px;
@@ -708,20 +712,23 @@
 
 
     .type-meal-container-inside h3 {
+        width:99%;
         font-weight: 500;
-        text-align: center;
-        font-size: 2em;
-        line-height: 2;
+        text-align: left;
+        font-size: 1.3em;
+        margin: 1em auto;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content:space-evenly;
 
     }
 
     .type-meal-container-inside p {
 
-        font-size: 1em;
+        font-size: 0.9em;
         text-align: center;
+        width:70%;
+        margin: auto;
 
     }
 
@@ -731,12 +738,13 @@
 
     .type-meal-container-inside button {
 
-        padding: 15px 3em;
+        padding: 10px 20px;
         border-radius: 10px;
         background-color: transparent;
         border: 2px solid #202020;
         color:#202020;
         display: block;
+        margin: 1em auto;
         font-size: 1.2em;
     }
   
@@ -896,8 +904,9 @@
     }
 
     /*Cart*/
+
     #cart-body {
-        width: 90%;
+        width: 95%;
         margin: auto;
         display: block;
     }
@@ -944,8 +953,17 @@
     
     .dish-holder{
         display: grid;
-        grid-template-columns: 50% 50%;
+        width:100%;
+        grid-template-columns: 33% 33% 33%;
+    }
 
+    .dish-holder .type-meal-container-inside{
+
+        width:95%;
+    }
+
+    .dish-holder div h3{
+        font-size: 1em;
     }
 
     #titleCart{
@@ -978,18 +996,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width:80%;
+        margin: auto;
 
     }
 
     .plusMinus{
-        margin: 1em 20px;
+
+        margin: 1em auto;
+        padding: 5px 10px!important;
+        font-size: 1.5em;
         width:40px;
         height: 40px;
-        padding: 0!important;
-        font-size: 1.5em;
-        border-radius: 160px;
+        border-radius: 150px!important;
         cursor: pointer;
-        display: inline;
         background-color: transparent;
         border:2px solid #404040;
         color:#202020;
@@ -997,8 +1017,8 @@
     }
 
     .cartQ span{
-        margin: 0 10px;
-        font-size: 2em;
+        margin: 0 1px;
+        font-size: 1.5em;
     }
 
 }

@@ -35,7 +35,7 @@ body {
 
 
 
-@media screen and (min-width:1400px) {
+@media screen and (min-width:1101px) {
 
     header{
         background-color: transparent;
@@ -202,6 +202,7 @@ body {
     #menu {
         width: 1100px;
         margin: auto;
+        
     }
 
     #menu h2 {
@@ -214,7 +215,7 @@ body {
 
     #menu h4 {
 
-        text-align: left;
+        text-align: center;
         font-weight: 500;
         font-size: 2em;
         margin: 2em 0 2em;
@@ -224,59 +225,10 @@ body {
         display: none;
     }
 
-    .menu-cards {
+    .type-meals {
 
         display: grid;
         grid-template-columns: 33% 33% 33%;
-    }
-
-    .menu-cards div {
-        width: 90%;
-        margin: 1em auto;
-        min-height: 30vh;
-        box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
-        padding-bottom: 3em;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    .menu-cards div h3 {
-        text-align: center;
-        font-weight: 500;
-        margin-top: 2em;
-        font-size: 1.2em;
-    }
-
-
-    .menu-cards div p {
-        text-align: center;
-        font-weight: 300;
-        margin: 2em 0 0;
-        font-size: 0.9em;
-    }
-
-    .menu-cards div span {
-        margin-left: 20px;
-    }
-
-    .menu-cards div img {
-        width: 100%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-
-    .menu-cards div button {
-
-        padding: 10px 40px;
-        border-radius: 8px;
-        background-color: transparent;
-        border:2px solid #202020;
-        color:#202020;
-        display: block;
-        margin: 1em auto 1em;
-        font-size: 1.2em;
-        cursor: pointer;
     }
 
     .type-meal-container-inside {
@@ -297,19 +249,28 @@ body {
 
 
     .type-meal-container-inside h3 {
-        text-align: center;
         font-weight: 500;
-        margin-top: 2em;
-        margin-left: 2.5em;
-        font-size: 1.5em;
+        text-align: center;
+        font-size: 1.4em;
+        margin: 1em 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     .type-meal-container-inside p {
         text-align: center;
     }
 
-    .type-meal-container-inside span {
-        margin-left: 3em;
+    .type-meals  .type-meal-container-inside button {
+
+        padding: 15px 3em;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 2px solid #202020;
+        color:#202020;
+        display: block;
+        font-size: 1.2em;
     }
 
 
@@ -517,6 +478,7 @@ body {
         grid-template-columns: 33% 33% 33%;
 
     }
+
     #titleCart{
         text-align: center;
         margin: 1em 0;
@@ -525,7 +487,7 @@ body {
     }
 
     #total-data{
-        text-align: left;
+        text-align: center;
         margin-top: 2em;
         font-size: 2.5em;
         font-weight: 200;
@@ -535,7 +497,7 @@ body {
         padding: 20px 3em;
         border-radius: 10px;
         display: block;
-        margin: 1em 0;
+        margin: 1em auto;
         font-size: 1.5em;
         background-color: transparent;
         border:2px solid #404040;
@@ -552,12 +514,11 @@ body {
 
     .plusMinus{
         margin: 1em 20px;
-        width:40px;
-        height: 40px;
+        width:40px!important;
+        height: 40px!important;
         font-size: 1.5em;
-        border-radius: 160px;
+        border-radius: 160px!important;
         cursor: pointer;
-        display: inline;
         background-color: transparent;
         border:2px solid #404040;
         color:#202020;
