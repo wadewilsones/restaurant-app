@@ -13,34 +13,36 @@
       <title>Menu</title>
    </head>
    <body>
-      <header>
+      <header class="headerRest">
          <section id="logo">
-            <h4>The Restaurant</h4>
+             <h4>The Restaurant</h4>
          </section>
+ 
          <section id="main-navigation">
-            <input type="checkbox" id="checkbox_id">
-            <nav>
-               <label for ="checkbox_id"><img src="./media/burger.svg"></label>
-               <ul>
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./menu.html">Menu</a></li>
-                  <li><a href="./contacts.html">Contacts</a></li>
-               </ul>
-            </nav>
-            <p>Menu</p>
-            <div class="cart-items">
-               <span class="cartItem"></span>
-               <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
-           </div>
+             <input type="checkbox" id="checkbox_id">
+             <nav>
+                 <label for ="checkbox_id"><img src="./media/burger.svg"></label>
+                 <ul>
+                     <li><a href="./index.html">Home</a></li>
+                     <li><a href="./menu.html">Menu</a></li>
+                     <li><a href="./contacts.html">Contacts</a></li>
+                 </ul>
+             </nav>
+             <p>Home</p>
+             <div class="cart-items">
+                 <span class="cartItem"></span>
+                 <a href="./cart.html"><img src="./media/bag.svg" alt="cart" class='cart-img'></a>
+             </div>
+ 
          </section>
-      </header>
+     </header>
       <main id="menu">
          <h2>What would you like 
             <br> to eat today?
          </h2>
          <h5>Please scroll left/right to see all options</h5>
          <h4>Appetizers</h4>
-         <section class="menu-cards">
+         <section class="type-meals">
             <div class="type-meal-container-inside">
                <img src="./media/salmon-rolls.jpg" alt="Salmon Rolls">
                <h3>Salmon Rolls <span>27</span></h3>
@@ -59,7 +61,7 @@
                 <p>Ingredients: Feta cheese, tomatoes</p>
                 <button class="addItem salad1">Add to cart</button>
             </div>
-            <div>
+            <div  class="type-meal-container-inside">
                <img src="./media/omelet-4.jpg" alt="Omelet">
                <h3>Omelet<span>13</span></h3>
                <p>Ingredients: Eggs, milk</p>
@@ -67,7 +69,7 @@
             </div>
          </section>
          <h4>Entree</h4>
-         <section class="menu-cards">
+         <section class="type-meals">
             <div class="type-meal-container-inside">
                 <img src="./media/meat-1.jpg" alt="pork chops">
                 <h3>Pork Chops <span>27</span></h3>
@@ -101,20 +103,20 @@
             </div>
          </section>
          <h4>Desserts</h4>
-         <section class="menu-cards">
-            <div>
+         <section class="type-meals">
+            <div class="type-meal-container-inside">
                <img src="./media/waffle-1.jpg" alt="Waffles">
                <h3>Raspberry Waffles <span>12</span></h3>
                <p>Ingredients: Eggs, milk, raspberry</p>
                <button class="addItem desert1">Add to cart</button>
             </div>
-            <div>
+            <div class="type-meal-container-inside">
                <img src="./media/waffles.jpg" alt="Chocolate Waffles">
                <h3>Chocolate Waffles<span>15</span></h3>
                <p>Ingredients: Eggs, milk, chocolate</p>
                <button class="addItem desert2">Add to cart</button>
             </div>
-            <div>
+            <div class="type-meal-container-inside">
                <img src="./media/pancakes-3.jpg" alt="Chocolate pancakes">
                <h3> Chocolate pancakes <span>10</span></h3>
                <p>Ingredients: Eggs, milk, chocolate</p>
@@ -140,7 +142,7 @@
             </div>
          </section>
          <h4>Drinks</h4>
-         <section class="menu-cards">
+         <section class="type-meals">
             <div class="type-meal-container-inside">
                 <img src="./media/latte.jpg" alt="Salmon Rolls">
                 <h3>Lavander Latte <span>5</span></h3>

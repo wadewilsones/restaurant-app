@@ -93,31 +93,58 @@ function displayCart(){
             <div class="type-meal-container-inside">
                 <img src="${item.img}" alt="Salmon Rolls">
                 <h3>${item.name}<span>${item.price}</span></h3>
-                <p>Ingredients: ${item.Ingredients}</p>
-                <p>Quantity: ${item.inCart}</p>
-                <button class="removeBtn">Remove from the cart</button>
+                <p style ="margin-top:1em">Ingredients: ${item.Ingredients}</p>
+                <div class="cartQ">
+                        <button class="plusMinus">+</button>
+                        <span>${item.inCart}</span>
+                        <button class="removeBtn plusMinus">-</button>
+                </div>
+                
              </div>
             `;
         })
         totalData.innerHTML += `
         <h3 id="total-data">Your total is: $${total}</h3>
-        <button id="pay" onClick = 'sendtoPay()'>Pay</button>
+        <button id="pay" onClick = 'sendtoPay() id="payBtn"'>Pay</button>
     `;
     }
-
 
 }
 
 function sendtoPay(){
-    window.location = "./pay.html"
+    window.location = "./pay.html";
+  
 }
 
 function confirmation(){
-    localStorage.setItem('dishNumber', 0);
-    localStorage.setItem('dishInCart', null);
-    localStorage.setItem('totalCost', 0);
+    window.location = "./confirmation.html";
+    if(window.location = "./confirmation.html"){
+        let orderDetails = document.querySelector("#confirmation");
+        orderDetails.innerHTML = "<h1>Hello</h1>";
+    }
+
     
+
+
 }
+
+    /*
+    let orderDetails = document.querySelector(".order-details");
+    let orderedFood = localStorage.getItem("dishInCart");
+    let orderTotal = localStorage.getItem("totalCost");
+    Object.values(orderedFood).map(item => {
+        orderDetails.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.price}</td>
+        <td>${item.inCart}</td>
+        
+    `
+    })
+    localStorage.setItem('dishNumber', 0),
+    localStorage.setItem('dishInCart', null),
+    localStorage.setItem('totalCost', 0)*/
+
+
 
 displayCart();
 let dishes = [{
@@ -260,7 +287,4 @@ let dishes = [{
         Ingredients: 'Oranges'
     },
 
-
-
-
-]
+];

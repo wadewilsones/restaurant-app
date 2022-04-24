@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
 </head>
 <body>
-    <header>
+    <header class="headerRest">
         <section id="logo">
             <h4>The Restaurant</h4>
         </section>
@@ -25,16 +25,17 @@
                     <li><a href="./contacts.html">Contacts</a></li>
                 </ul>
             </nav>
-            <p>Payment</p>
+            <p>Home</p>
             <div class="cart-items">
                 <span class="cartItem"></span>
-                <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
+                <a href="./cart.html"><img src="./media/bag.svg" alt="cart" class='cart-img'></a>
             </div>
+
         </section>
     </header>
     <main id="payment">
         <h2>Enter your payment details</h2>
-        <form id="payment-form" onSubmit="confirmPayment()" action="./confirmation.html">
+        <form id="payment-form" action = './pay.html' onsubmit="confirmation()">
                 <fieldset id="ccGroup">
                     <label for="ccHolder"></label><br>
                     <input type="text" id="ccHolder" placeholder="Credit card holder name">
@@ -55,7 +56,7 @@
                         <input type="text" id="zip" placeholder="Zip-code.." >        
                     </fieldset>
                 
-                <input type="submit" value="Pay" id="payBtn" onclick="confirmation()">
+                <input type="submit" value="Pay" id="payBtn" >
 
         </form>
 

@@ -16,7 +16,7 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
 ></script>
 </head>
-<body>
+<body id="home-page">
     <header>
         <section id="logo">
             <h4>The Restaurant</h4>
@@ -35,13 +35,18 @@
             <p>Home</p>
             <div class="cart-items">
                 <span class="cartItem"></span>
-                <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart" aria-hidden="true"></i></a>
+                <a href="./cart.html"><img src="./media/bag.svg" alt="cart" class='cart-img'></a>
             </div>
 
         </section>
     </header>
     <main id="home-main">
-    
+    <section id="image-data">
+    </section>
+    <section id="welcome-title">
+        <h1>Welcome to the Restaurant!</h1>
+        <a href='./menu.html' id="home-menu">Check Menu</a>
+    </section>
     </main>
     <script src="./app.js"></script>
 </body>

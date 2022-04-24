@@ -10,15 +10,10 @@ body {
     font-family: Quicksand, Helvetica, sans-serif;
 }
 
-#logo {
-    background-color: #DE3C3C;
-    color: white;
-    padding: 2em 0;
-}
-
 #logo h4 {
     text-align: center;
     font-weight: 300;
+
 }
 
 #cart-container a {
@@ -29,7 +24,7 @@ body {
 
 
 #cart {
-    color: #DE3C3C;
+    color: #ffffff;
     cursor: pointer;
     display: block;
     font-size: 32px;
@@ -40,19 +35,24 @@ body {
 
 
 
-@media screen and (min-width:1100px) {
+@media screen and (min-width:1400px) {
+
+    header{
+        background-color: transparent;
+    }
     #logo {
-        font-size: 1.2em;
+        font-size: 2em;
+        text-align: center;
+        color:rgb(255, 255, 255);
     }
 
     #main-navigation {
-        width: 1100px;
+        width:1100px;
         margin: auto;
         padding: 1em 0;
-        box-shadow: rgba(59, 56, 56, 0.365) 1px 1px 10px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        background-color: rgb(255, 255, 255);
+        background-color: transparent;
         display: grid;
         grid-template-columns: 90% 10%;
 
@@ -64,15 +64,19 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+
     }
 
     .cart-items span {
-        font-size: 1em;
+        font-size: 1.5em;
         font-weight: 500;
+        color:white;
     }
 
-    i {
-        font-size: 1.6em;
+    .cart-items img{
+        color:white;
+        width:48px;
+ 
     }
 
     .cart-items a {
@@ -106,7 +110,8 @@ body {
     #main-navigation nav ul {
         display: flex;
         align-items: center;
-        justify-content: end;
+        padding-left: 25%;
+        justify-content: center;
 
     }
 
@@ -119,96 +124,81 @@ body {
 
     #main-navigation nav ul li a {
         text-decoration: none;
-        color: black;
+        color: rgb(255, 255, 255);
 
     }
 
     #main-navigation a:hover {
-        text-decoration: underline;
-        color: black;
+        text-decoration: 1px underline;
+        color: rgb(255, 255, 255);
 
-    }
-
-    /*Cart*/
-    #cart-body {
-        width: 1100px;
-        margin: auto;
-    }
-
-    #cart-check-menu {
-        display: block;
-        width: 300px;
-        margin: 2em auto;
-        padding: 10px;
-        background-color: #DE3C3C;
-        color: white;
-        text-align: center;
-        font-size: 1.3em;
-        text-decoration: none;
-        border-radius: 10px;
-    }
-
-    #cart-body h1 {
-        text-align: center;
-        font-size: 2em;
-        margin: 2em 0;
-    }
-
-
-    .cart-meals {
-        width: 1100px;
     }
 
     /*Home*/
-
-    #home-main h2 {
-        text-align: center;
-        font-weight: 500;
-        font-size: 2.6em;
-        margin: 2em 0 2em;
+    #home-page{
+        background-image:  linear-gradient(90deg, rgba(13, 11, 13, 0.694) 0%, rgba(21, 15, 17, 0.739) 100%), url('./media/main-pic.jpg');
+        background-size: cover;
+        padding: 1em;
     }
 
-    #home-meal-container {
-        width: 1100px;
-        margin: auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    #home-main{
 
+        display: grid;
+        grid-template-columns: 60% 50%;
     }
 
 
-    .meal-container-inside {
-        width: 90%;
-        margin: auto;
-        height: 30vh;
-        box-shadow: rgba(57, 56, 56, 0.258) 1px 1px 10px;
-        padding-bottom: 3em;
+    #welcome-title{
+        grid-column-start: 1;
+
+    }
+    
+
+    #welcome-title h1{
+
+        font-size: 5em;
+        margin: 3em 0 0.5em 3em;
+        font-weight: 100;
+        color:white;
+
+    }
+
+    #home-menu{
         border-radius: 10px;
-        cursor: pointer;
-
-    }
-
-    .meal-container-inside h3 {
-        text-align: center;
-        font-weight: 500;
-        margin-top: 2em;
+        padding: 1em 2em;
+        background-color: transparent;
+        border: 3px solid white;
+        width:140px;
+        margin-left: 10em;
         font-size: 1.5em;
-    }
-
-    .meal-container-inside img {
-        width: 100%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-
-    .wrapper a {
+        color: white;
+        cursor: pointer;
         text-decoration: none;
-        color: black;
+        transition: scale 2s ease-in;
     }
+
+    
+    #home-menu:hover{
+        border-radius: 10px;
+        padding: 1em 2em;
+        display: border;
+        background-color: white;
+        width:140px;
+        margin-left: 10em;
+        font-size: 1.5em;
+        color: rgb(36, 33, 33);
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+
 
     /*Menu*/
+
+    .headerRest{
+        background-color: #202020;
+        padding: 1em;
+    }
     #menu {
         width: 1100px;
         margin: auto;
@@ -279,46 +269,14 @@ body {
     .menu-cards div button {
 
         padding: 10px 40px;
-        border-radius: 10px;
-        background-color: #DE3C3C;
+        border-radius: 8px;
+        background-color: transparent;
+        border:2px solid #202020;
+        color:#202020;
         display: block;
         margin: 1em auto 1em;
         font-size: 1.2em;
-        color: white;
         cursor: pointer;
-    }
-
-    .addItem {
-        cursor: pointer;
-    }
-
-
-    /*meals*/
-    .meals {
-        width: 1100px;
-        margin: auto;
-
-    }
-
-    .meals h2 {
-        text-align: center;
-        font-weight: 500;
-        font-size: 2.2em;
-        margin: 2em 0 2em;
-    }
-
-    .time-meals {
-        display: grid;
-        width: 1100px;
-        margin: auto;
-        grid-template-columns: 25% 25% 25% 25%;
-    }
-
-    /*Type meals*/
-    .type-meals {
-
-        display: grid;
-        grid-template-columns: 50% 50%
     }
 
     .type-meal-container-inside {
@@ -352,58 +310,6 @@ body {
 
     .type-meal-container-inside span {
         margin-left: 3em;
-    }
-
-    .addItem {
-
-        padding: 20px 3em;
-        border-radius: 10px;
-        background-color: #DE3C3C;
-        display: block;
-        margin: 1em auto;
-        font-size: 1.5em;
-        color: white;
-    }
-
-    
-    .dish-holder{
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-
-    }
-    #titleCart{
-        text-align: center;
-        margin: 1em 0;
-        font-size: 3em;
-    }
-
-    #total-data{
-        text-align: left;
-        margin-top: 2em;
-        font-size: 2.5em;
-    }
-
-    #pay{
-        padding: 20px 3em;
-        border-radius: 10px;
-        background-color: #DE3C3C;
-        display: block;
-        margin: 1em 0;
-        font-size: 1.5em;
-        color: white;
-        cursor: pointer;
-    }
-
-    .removeBtn{
-
-        padding: 20px 40px;
-        border-radius: 10px;
-        background-color: #DE3C3C;
-        display: block;
-        margin: 1em auto;
-        font-size: 1.2em;
-        color: white;
-        cursor: pointer;
     }
 
 
@@ -559,6 +465,110 @@ body {
         color: black;
     }
 
+
+    /*Cart*/
+
+    #cart-body {
+        width: 1100px;
+        margin: auto;
+    }
+
+    #cart-check-menu {
+        display: block;
+        width: 300px;
+        margin: 2em auto;
+        padding: 10px;
+        background-color: #DE3C3C;
+        color: white;
+        text-align: center;
+        font-size: 1.3em;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+
+    #cart-body h1 {
+        text-align: center;
+        font-size: 2em;
+        margin: 2em 0;
+    }
+
+
+    .cart-meals {
+        width: 1100px;
+    }
+
+    .addItem {
+
+        padding: 20px 3em;
+        border-radius: 10px;
+        background-color: transparent;
+        color: #202020;
+        border-color: #202020;
+        display: block;
+        margin: 1em auto;
+        font-size: 1.5em;
+        color: white;
+        cursor: pointer;
+    }
+
+    
+    .dish-holder{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+
+    }
+    #titleCart{
+        text-align: center;
+        margin: 1em 0;
+        font-size: 3em;
+        font-weight: 200;
+    }
+
+    #total-data{
+        text-align: left;
+        margin-top: 2em;
+        font-size: 2.5em;
+        font-weight: 200;
+    }
+
+    #pay{
+        padding: 20px 3em;
+        border-radius: 10px;
+        display: block;
+        margin: 1em 0;
+        font-size: 1.5em;
+        background-color: transparent;
+        border:2px solid #404040;
+        color:#202020;
+        cursor: pointer;
+    }
+
+    .cartQ{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .plusMinus{
+        margin: 1em 20px;
+        width:40px;
+        height: 40px;
+        font-size: 1.5em;
+        border-radius: 160px;
+        cursor: pointer;
+        display: inline;
+        background-color: transparent;
+        border:2px solid #404040;
+        color:#202020;
+
+    }
+
+    .cartQ span{
+        margin: 0 10px;
+        font-size: 2em;
+    }
+
     /*Payments*/
 
     #payment h2{
@@ -634,8 +644,30 @@ body {
         margin: 1em auto;
     }
 
+    /*Confirmation*/
+    #confirmation{
+        width:1100px;
+        margin: auto;
+    }
 
+    #confirmation h1{
+        text-align: center;
+        margin-top: 2em;
+    }
 
+    #confirmation h2{
+        text-align: center;
+        margin-top: 0.5em;
+    }
+
+    #confirmation h3{
+        text-align: left;
+        margin: 3em 0 1em;
+    }
+
+   #confirmation table{
+       border:2px solid red;
+   }
 
 
 }
