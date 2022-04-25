@@ -63,85 +63,100 @@ function totalCost(price){
 function displayCart(){
     let food = localStorage.getItem("dishInCart");
     let total = localStorage.getItem("totalCost");
-    let dishNumber = localStorage.getItem("dishNumber");
+    let dishNumber =  localStorage.getItem("dishNumber");
     food = JSON.parse(food);
     let dishContainer = document.querySelector('.dish-holder');
     let totalData = document.querySelector('.Cost-data');
 
-    if(food && total > 0 && dishNumber > 0){
+    if(dishNumber > 0 && dishContainer){
         document.querySelector('#empty-cart').style.display = 'none';
         dishContainer.innerHTML = '';
         document.querySelector('#titleCart').innerHTML = "Your cart";
-        Object.values(food).map(item => {
-            dishContainer.innerHTML += `
-            <div class="type-meal-container-inside">
+         Object.values(food).map(item => {
+            dishContainer.innerHTML += `<div class="type-meal-container-inside">
                 <img src="${item.img}" alt="${item.name}">
                 <h3>${item.name}<span>${item.price}</span></h3>
-                <p style ="margin-top:1em">Ingredients: ${item.Ingredients}</p>
-                <div class="cartQ">
-                        <button class="plusMinus plusBtn">+</button>
-                        <span>${item.inCart}</span>
-                        <button class="removeBtn plusMinus">-</button>
-                </div>      
-             </div>`});
-             totalData.innerHTML = `<h3 id="total-data">Your total is: $${total}</h3><button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>`;
-      
-    let plusBtn = document.querySelectorAll(".plusBtn");
-    let removeBtn = document.querySelectorAll(".removeBtn");
-
-    
-    //Add item button
-    for (let i = 0; i < plusBtn.length; i++){
-        plusBtn[i].addEventListener('click', function(){
-            Object.values(food)[i].inCart = Object.values(food)[i].inCart + 1;
-            //push new data to storage
-            let itemNumber = localStorage.getItem('dishNumber');
-            itemNumber = parseInt(itemNumber);
-            localStorage.setItem('dishNumber', itemNumber + 1);
-            totalCost(Object.values(food)[i].price);
-            setDishes(Object.values(food)[i]);
-            displayItemAmount();
-            displayCart();
-
-        })
-    }
-
-    //Remove item button
-    for (let i=0; i < removeBtn.length; i++){
-        removeBtn[i].addEventListener('click', function(){
-            Object.values(food)[i].inCart = Object.values(food)[i].inCart - 1;
-            let itemNumber = localStorage.getItem('dishNumber');
-            itemNumber = parseInt(itemNumber);
-            localStorage.setItem('dishNumber', itemNumber - 1);
-
-            if(localStorage.getItem('dishNumber') < 0){
+                    <p style ="margin-top:1em">Ingredients: ${item.Ingredients}</p>
+                    <div class="cartQ">
+                            <button class="plusMinus plusBtn">+</button>
+                            <span>${item.inCart}</span>
+                            <button class="removeBtn plusMinus">-</button>
+                    </div>      
+                 </div>`});
+            totalData.innerHTML = `<h3 id="total-data">Your total is: $${total}</h3><button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>`;
+            //Add item button
+             let plusBtn = document.querySelectorAll(".plusBtn");
+             for (let i = 0; i < plusBtn.length; i++){
+                 plusBtn[i].addEventListener('click', function(){
+                     Object.values(food)[i].inCart = Object.values(food)[i].inCart + 1;
+                     //push new data to storage
+                     let itemNumber = localStorage.getItem('dishNumber');
+                     itemNumber = parseInt(itemNumber);
+                     localStorage.setItem('dishNumber', itemNumber + 1);
+                     totalCost(Object.values(food)[i].price);
+                     setDishes(Object.values(food)[i]);
+                     displayItemAmount();
+                     displayCart();
+                    
+                 })
+             }
+             
+             
+             //Remove item button
+             let removeBtn = document.querySelectorAll(".removeBtn");
+             for (let i=0; i < removeBtn.length; i++){
+                removeBtn[i].addEventListener('click', function(){
+                    Object.values(food)[i].inCart = Object.values(food)[i].inCart - 1; // remove one item from the targeted object
+                    //change dishNumber
+                    let itemNumber = localStorage.getItem('dishNumber');
+                    itemNumber = parseInt(itemNumber);
+                    localStorage.setItem('dishNumber', itemNumber - 1);
+                    displayItemAmount();
+                    if(localStorage.getItem('dishNumber') < 0){
                     localStorage.setItem('dishNumber', 0);
-            };
-            /*Total cost*/
-            let cartCost = localStorage.getItem("totalCost");
-            if(cartCost != 0){
-                cartCost = parseInt(cartCost);
-                localStorage.setItem("totalCost", cartCost - Object.values(food)[i].price);
+                    };
+
+                    //calculate total
+                    let cartCost = localStorage.getItem("totalCost");
+                    if(cartCost > 0){
+                        cartCost = parseInt(cartCost);
+                        localStorage.setItem("totalCost", cartCost - Object.values(food)[i].price);
+                    }
+                    else
+                    {
+                        localStorage.setItem("totalCost", "0");
+
+                    }
+                    
+                    //update dishInCart
+
+                    if(Object.values(food)[i].inCart <= 0){
+                        Object.values(food)[i].inCart = 0;
+                        //console.log(food[Object.values(food)[i].name].name); //access to food item name  
+                        delete food[[Object.values(food)[i].name]];
+                        localStorage.setItem("dishInCart", JSON.stringify(food));
+                        console.log('this after delete', food);
+                        displayCart();
+                        if (Object.keys(food).length === 0){
+                            console.log('This is empty food', food);
+                            localStorage.removeItem("dishInCart");
+                            document.querySelector('#empty-cart').style.display = 'block';
+                            dishContainer.style.display = 'none';
+                            totalData.style.display = 'none';
+                            document.querySelector('#titleCart').style.display = 'none';
+                        }
+                    }
+                    else{
+                        console.log('this is food no mods',food);   
+                        localStorage.setItem("dishInCart", JSON.stringify(food))
+                        displayCart();
+                    }
+                })
             }
-            else{
-                localStorage.setItem("totalCost", 0);
-            }
-            /*Dishes*/
-            localStorage.setItem("dishInCart", JSON.stringify(food));
-            if(Object.values(food)[i].inCart <= 0){
-                Object.values(food)[i].inCart = 0;
-                let newFood = Object.values(food).filter((item) => item.inCart > 0)
-                localStorage.setItem("dishInCart", JSON.stringify(newFood));
-            }
-        })
     }
-
+        
     }
-}
-
-
-
-
+              
 
 function setDishes(dish) {
 
@@ -150,6 +165,7 @@ function setDishes(dish) {
 
         if (cartItems != null) {
 
+        
             if (cartItems[dish.name] === undefined) {
                 cartItems = {
                     ...cartItems,
@@ -157,19 +173,22 @@ function setDishes(dish) {
                 }
             }
             cartItems[dish.name].inCart += 1;
+
     
         } else {
             dish.inCart = 1;
-            cartItems = {
-                [dish.name]: dish
+
+                cartItems = {
+                    [dish.name]: dish
+                 
+                }
             }
+            localStorage.setItem("dishInCart", JSON.stringify(cartItems));
         }
     
   
-    localStorage.setItem("dishInCart", JSON.stringify(cartItems));
+   
     
-
-}
 
 function sendtoPay(){
  
@@ -212,7 +231,8 @@ function displayConfirmation(){
 
 
 
-let dishes = [{
+let dishes = [
+    {
         name: 'Salmon Rolls',
         price: 27,
         inCart: 0,
