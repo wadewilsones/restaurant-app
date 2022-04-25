@@ -3,7 +3,7 @@ let addItemBtns = document.querySelectorAll(".addItem");
 let emptyCart = document.querySelector("#empty-cart");
 let removeItemBtns = document.querySelectorAll(".removeItem");
 let cartFullContainer = document.querySelector("#full-cart-container");
-
+let dishContainer = document.querySelector('.dish-holder');
 
 for (let i = 0; i < addItemBtns.length; i++) {
     addItemBtns[i].addEventListener('click', () => {
@@ -11,6 +11,7 @@ for (let i = 0; i < addItemBtns.length; i++) {
         totalCost(dishes[i].price);
         displayItemAmount();
     })
+
 }
 
 window.onload = () => {
@@ -19,6 +20,7 @@ window.onload = () => {
     displayCart();
 
 }
+
 
 //how many items in the cart
 
@@ -34,30 +36,6 @@ function calculateItemsAmount(dish) {
     }
 
     setDishes(dish);
-
-}
-
-function setDishes(dish) {
-
-    let cartItems = localStorage.getItem('dishInCart');
-    cartItems = JSON.parse(cartItems); // JSON string to Object
-    if (cartItems != null) {
-
-        if (cartItems[dish.name] === undefined) {
-            cartItems = {
-                ...cartItems,
-                [dish.name]: dish
-            }
-        }
-        cartItems[dish.name].inCart += 1;
-    } else {
-        dish.inCart = 1;
-        cartItems = {
-            [dish.name]: dish
-        }
-    }
-
-    localStorage.setItem("dishInCart", JSON.stringify(cartItems));
 
 }
 
@@ -81,6 +59,8 @@ function totalCost(price){
 
 }
 
+/*Display cart's data*/
+
 function displayCart(){
     let food = localStorage.getItem("dishInCart");
     let total = localStorage.getItem("totalCost");
@@ -98,19 +78,56 @@ function displayCart(){
                 <h3>${item.name}<span>${item.price}</span></h3>
                 <p style ="margin-top:1em">Ingredients: ${item.Ingredients}</p>
                 <div class="cartQ">
-                        <button class="plusMinus">+</button>
+                        <button class="plusMinus plusBtn">+</button>
                         <span>${item.inCart}</span>
-                        <button class="removeBtn plusMinus">-</button>
-                </div>
-                
-             </div>
-            `;
+                        <button class="removeBtn plusMinus">-</button>s
+                </div>      
+             </div>`;
+
         })
         totalData.innerHTML += `
         <h3 id="total-data">Your total is: $${total}</h3>
-        <button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>
-    `;
+        <button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>`;
+
+    let plusBtn = document.querySelectorAll(".plusBtn");
+
+    for (let i = 0; i < plusBtn.length; i++){
+        plusBtn[i].addEventListener('click', function(){
+           console.log(food[i]);
+           ; 
+        })
     }
+        
+    }
+
+}
+
+
+function setDishes(dish) {
+
+    let cartItems = localStorage.getItem('dishInCart');
+    cartItems = JSON.parse(cartItems); // JSON string to Object
+
+        if (cartItems != null) {
+
+            if (cartItems[dish.name] === undefined) {
+                cartItems = {
+                    ...cartItems,
+                    [dish.name]: dish
+                }
+            }
+            cartItems[dish.name].inCart += 1;
+    
+        } else {
+            dish.inCart = 1;
+            cartItems = {
+                [dish.name]: dish
+            }
+        }
+    
+  
+    localStorage.setItem("dishInCart", JSON.stringify(cartItems));
+    
 
 }
 
@@ -123,6 +140,7 @@ function sendtoPay(){
 
 function displayConfirmation(){
    if(document.querySelector(".order-details")){
+    document.querySelector(".cartItem").innerHTML = null; 
         let orderDetails = document.querySelector(".order-details");
         let orderedFood = localStorage.getItem("dishInCart");
         orderedFood =  JSON.parse(orderedFood);
@@ -142,6 +160,12 @@ function displayConfirmation(){
     })
     orderDetails.innerHTML += `
     <td colspan=3 id='totalOrder'>Total: $${orderTotal} </td>`
+    document.addEventListener('click', function cleanData(){
+        localStorage.removeItem("dishInCart");
+        localStorage.removeItem("dishNumber");
+        localStorage.removeItem("totalCost");
+    })
+       
 }
    
 }
@@ -237,14 +261,6 @@ let dishes = [{
         Ingredients: 'Eggs, milk, chocolate'
     },
 
-    {
-        name: 'Chocolate pancakes',
-        price: 12,
-        inCart: 0,
-        img: "./media/pancakes-3.jpg",
-        Ingredients: 'Eggs, milk, chocolate'
-    },
-
 
     {
         name: 'Strawberry omelet',
@@ -254,22 +270,6 @@ let dishes = [{
         Ingredients: 'Eggs, milk, strawberry'
     },
 
-
-    {
-        name: 'Raspberry Pancakes',
-        price: 12,
-        inCart: 0,
-        img: "./media/pancakes.jpg.jpg",
-        Ingredients: 'Eggs, milk, raspberry'
-    },
-
-    {
-        name: 'Caramel pancakes',
-        price: 12,
-        inCart: 0,
-        img: "./media/pancakes-2.jpg",
-        Ingredients: 'Eggs, milk, caramel'
-    },
 
     {
         name: 'Lavander Latte',
