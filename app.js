@@ -18,7 +18,6 @@ window.onload = () => {
     displayItemAmount();
     displayConfirmation();
     displayCart();
-
 }
 
 
@@ -64,10 +63,12 @@ function totalCost(price){
 function displayCart(){
     let food = localStorage.getItem("dishInCart");
     let total = localStorage.getItem("totalCost");
+    let dishNumber = localStorage.getItem("dishNumber");
     food = JSON.parse(food);
     let dishContainer = document.querySelector('.dish-holder');
     let totalData = document.querySelector('.Cost-data');
-    if(food && dishContainer ){
+
+    if(food && total > 0 && dishNumber > 0){
         document.querySelector('#empty-cart').style.display = 'none';
         dishContainer.innerHTML = '';
         document.querySelector('#titleCart').innerHTML = "Your cart";
@@ -80,27 +81,66 @@ function displayCart(){
                 <div class="cartQ">
                         <button class="plusMinus plusBtn">+</button>
                         <span>${item.inCart}</span>
-                        <button class="removeBtn plusMinus">-</button>s
+                        <button class="removeBtn plusMinus">-</button>
                 </div>      
-             </div>`;
-
-        })
-        totalData.innerHTML += `
-        <h3 id="total-data">Your total is: $${total}</h3>
-        <button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>`;
-
+             </div>`});
+             totalData.innerHTML = `<h3 id="total-data">Your total is: $${total}</h3><button id="pay" onClick = 'sendtoPay()' id="payBtn"'>Pay</button>`;
+      
     let plusBtn = document.querySelectorAll(".plusBtn");
+    let removeBtn = document.querySelectorAll(".removeBtn");
 
+    
+    //Add item button
     for (let i = 0; i < plusBtn.length; i++){
         plusBtn[i].addEventListener('click', function(){
-           console.log(food[i]);
-           ; 
+            Object.values(food)[i].inCart = Object.values(food)[i].inCart + 1;
+            //push new data to storage
+            let itemNumber = localStorage.getItem('dishNumber');
+            itemNumber = parseInt(itemNumber);
+            localStorage.setItem('dishNumber', itemNumber + 1);
+            totalCost(Object.values(food)[i].price);
+            setDishes(Object.values(food)[i]);
+            displayItemAmount();
+            displayCart();
+
         })
     }
-        
+
+    //Remove item button
+    for (let i=0; i < removeBtn.length; i++){
+        removeBtn[i].addEventListener('click', function(){
+            Object.values(food)[i].inCart = Object.values(food)[i].inCart - 1;
+            let itemNumber = localStorage.getItem('dishNumber');
+            itemNumber = parseInt(itemNumber);
+            localStorage.setItem('dishNumber', itemNumber - 1);
+
+            if(localStorage.getItem('dishNumber') < 0){
+                    localStorage.setItem('dishNumber', 0);
+            };
+            /*Total cost*/
+            let cartCost = localStorage.getItem("totalCost");
+            if(cartCost != 0){
+                cartCost = parseInt(cartCost);
+                localStorage.setItem("totalCost", cartCost - Object.values(food)[i].price);
+            }
+            else{
+                localStorage.setItem("totalCost", 0);
+            }
+            /*Dishes*/
+            localStorage.setItem("dishInCart", JSON.stringify(food));
+            if(Object.values(food)[i].inCart <= 0){
+                Object.values(food)[i].inCart = 0;
+                let newFood = Object.values(food).filter((item) => item.inCart > 0)
+                localStorage.setItem("dishInCart", JSON.stringify(newFood));
+            }
+        })
     }
 
+    }
 }
+
+
+
 
 
 function setDishes(dish) {
