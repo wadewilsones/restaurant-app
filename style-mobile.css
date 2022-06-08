@@ -52,7 +52,7 @@
         width: 100%;
         height: 200px;
         position: absolute;
-        top: 90vh;
+        top: 80vh;
         left: -100%;
         box-shadow: rgba(0, 0, 0, 0.096) 2px 2px 9px;
         transition: 0.3s ease-in;

@@ -132,13 +132,11 @@ function displayCart(){
 
                     if(Object.values(food)[i].inCart <= 0){
                         Object.values(food)[i].inCart = 0;
-                        //console.log(food[Object.values(food)[i].name].name); //access to food item name  
+            
                         delete food[[Object.values(food)[i].name]];
                         localStorage.setItem("dishInCart", JSON.stringify(food));
-                        console.log('this after delete', food);
                         displayCart();
                         if (Object.keys(food).length === 0){
-                            console.log('This is empty food', food);
                             localStorage.removeItem("dishInCart");
                             document.querySelector('#empty-cart').style.display = 'block';
                             dishContainer.style.display = 'none';
@@ -147,7 +145,6 @@ function displayCart(){
                         }
                     }
                     else{
-                        console.log('this is food no mods',food);   
                         localStorage.setItem("dishInCart", JSON.stringify(food))
                         displayCart();
                     }
