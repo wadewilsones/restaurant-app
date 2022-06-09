@@ -274,6 +274,18 @@ body {
     }
 
 
+    .type-meal-container-inside button:hover {
+
+        padding: 15px 3em;
+        border-radius: 10px;
+        background-color: black;
+        border: 2px solid #202020;
+        color:white;
+        display: block;
+        font-size: 1.2em;
+    }
+
+
     /*Contacts*/
 
     #contacts {
